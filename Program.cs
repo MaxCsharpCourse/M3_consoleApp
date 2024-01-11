@@ -31,3 +31,4 @@ class MainClass
             Console.WriteLine("Your color is cyan!");
         }
     }
+}
