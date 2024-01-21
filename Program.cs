@@ -4,22 +4,37 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
-        for (int i = 0; i < arr.GetUpperBound(0)-1; i++)
+        (string username, string surname, string login, int loginLength, bool hasPet, int age, string[] favColor) User;
+        
+        for (int k = 0; k <3; k++)
         {
-            for (int j=i+1; j < arr.GetUpperBound(0); j++)
+            Console.WriteLine("Введите имя");
+            User.username = Console.ReadLine();
+            Console.WriteLine("Введите фамилию");
+            User.surname = Console.ReadLine();
+            Console.WriteLine("Введите логин");
+            User.login = Console.ReadLine(); ;
+            User.loginLength = User.login.Length;
+            Console.WriteLine("Есть ли у вас животные? Да или Нет");
+            if (Console.ReadLine() == "Да")
             {
-                if (arr[i] > arr[j])
-                {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
+                User.hasPet = true;
+            }
+            else
+            {
+                User.hasPet = false;
+            }
+            Console.WriteLine("Введите возраст пользователя");
+            User.age = int.Parse(Console.ReadLine());
+
+            User.favColor = new string[3];
+            Console.WriteLine("Введите три любимых цвета пользователя");
+            for (int i = 0; i < User.favColor.Length; i++)
+            {
+                User.favColor[i] = Console.ReadLine();
             }
         }
-        
-        for (int i = 0; i < arr.GetUpperBound(0); i++)
-            Console.WriteLine(arr[i]);
+
     }
     
 }
